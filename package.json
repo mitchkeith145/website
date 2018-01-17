@@ -5,20 +5,32 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d lib && mv lib/public/javascript/* src/public/js/ && webpack --display-error-details"
+    "build-web": "babel src -d lib --ignore src/public/js && mv lib/public/javascript/* src/public/js/ && webpack --display-error-details",
+    "run-live": "PORT=80 nohup /home/ec2-user/.nvm/versions/node/v8.9.3/bin/node src/server.js",
+    "run-local": "PORT=3000 node src/server.js",
+    "build": "rm mitchkeith*.zip && zip -r mitchkeith.zip .",
+    "send": "scp -i ~/.ssh/aws-key-pair.pem mitchkeith.zip ec2-user@ec2-52-40-122-84.us-west-2.compute.amazonaws.com:~/",
+    "deploy": "npm run-script build-web && npm run-script build && npm run-script send"
   },
   "author": "Mitchell Keith",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.182.0",
+    "babel-loader": "^7.1.2",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-images": "^0.5.14",
+    "react-load-script": "0.0.6",
+    "react-modal": "^3.1.10",
     "react-photo-gallery": "^6.0.22"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "image-size": "^0.6.2",
+    "react-svg-loader": "^2.1.0"
   }
 }

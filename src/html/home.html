@@ -1,14 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<html class="white-background">
     <head>
         <title>Mitchell Keith</title>
         <link rel="stylesheet" type="text/css" href="style/main.css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="javascript/raphael.min.js"></script>
-        <script type="text/javascript" src="javascript/require.js"></script>
+        <script type="text/javascript" src="js/raphael-2.2.7.min.js"></script>
+        <script type="text/javascript" src="js/require.js"></script>
     </head>
-    <body class="beige-bg main-font">
+    <body class="main-font" style="overflow-y: none; ">
         <div class="main-header">
             <div class="toc">
 
@@ -18,103 +19,118 @@
                 <div>Keith</div>
             </div>
         </div>
-        <div class="main-content">
-            <div id="about-content" class="content-block">
-                <div class="column-container">
-                    <div class="left-half">
-                        <div class="column-header">...the developer</div>
-                        <div class="column-content content-table">
-                            <div class="content-table-row">
-                                <div class="content-table-cell">
-                                    <div class="logo-placeholder">
-                                        <img src="images/ohio_state.png" class="logo">
-                                    </div>
-                                    <div class="logo-description-placeholder">
-                                        <div class="logo-description">
-                                            Ohio State University (Columbus, OH) <br>
-                                            B.S. Computer Science &amp Engineering <br>
-                                            May, 2015
+        <div class="main-scrollable-pane main-background">
+            <div class="main-content">
+
+                <div id="about-content" class="content-block main-background">
+
+                    <div class="column-container">
+                        <div class="left-half">
+                            <div class="column-header">...the developer &nbsp; &nbsp; &nbsp;</div>
+                            <div class="column-content content-table">
+                                <div class="content-table-row">
+                                    <div class="content-table-cell">
+                                        <div class="logo-placeholder">
+                                            <img src="images/ohio_state.png" class="logo">
+                                        </div>
+                                        <div class="logo-description-placeholder">
+                                            <div class="logo-description">
+                                                Ohio State University (Columbus, OH) <br>
+                                                B.S. Computer Science &amp Engineering <br>
+                                                May, 2015
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="content-table-row">
-                                <div class="content-table-cell">
-                                    <div class="logo-placeholder">
-                                        <img src="images/morningstar.png" class="logo">
-                                    </div>
-                                    <div class="logo-description-placeholder">
-                                        <div class="logo-description">
-                                            Morningstar (Chicago, IL) <br>
-                                            Associate Engineer <br>
-                                            July 2015 to July 2017
+                                <div class="content-table-row">
+                                    <div class="content-table-cell">
+                                        <div class="logo-placeholder">
+                                            <img src="images/morningstar.png" class="logo">
+                                        </div>
+                                        <div class="logo-description-placeholder">
+                                            <div class="logo-description">
+                                                Morningstar (Chicago, IL) <br>
+                                                Associate Engineer <br>
+                                                July 2015 to July 2017
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="content-table-row">
-                                <div class="content-table-cell">
-                                    <div class="logo-placeholder">
-                                        <img src="images/cisco.png" class="logo">
-                                    </div>
-                                    <div class="logo-description-placeholder">
-                                        <div class="logo-description">
-                                            Cisco, Systems (San Jose, CA) <br>
-                                            Intern - Software Engineering <br>
-                                            June - August, 2012 - 2014
+                                <div class="content-table-row">
+                                    <div class="content-table-cell">
+                                        <div class="logo-placeholder">
+                                            <img src="images/cisco.png" class="logo">
+                                        </div>
+                                        <div class="logo-description-placeholder">
+                                            <div class="logo-description">
+                                                Cisco, Systems (San Jose, CA) <br>
+                                                Intern - Software Engineering <br>
+                                                June - August, 2012 - 2014
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="right-half">
-                        <div class="column-header">...the person</div>
-                        <div class="column-content">
-                            <div class="content-table-row">
-                                <div class="content-table-cell">
-                                    <div class="logo-placeholder">
-                                        <img src="images/ohio_state.png" class="logo">
-                                    </div>
-                                    <div class="logo-description-placeholder">
-                                        <div class="logo-description">
-                                            Ohio State University (Columbus, OH) <br>
-                                            B.S. Computer Science &amp Engineering <br>
-                                            May, 2015
+                        <div class="right-half">
+                            <div class="column-header">...the person &nbsp; &nbsp; &nbsp;</div>
+                            <div class="column-content">
+                                <!-- <div class="content-table-row">
+                                    <div class="content-table-cell">
+                                        <div class="logo-placeholder">
+                                            <img src="images/ohio_state.png" class="logo">
+                                        </div>
+                                        <div class="logo-description-placeholder">
+                                            <div class="logo-description">
+                                                Ohio State University (Columbus, OH) <br>
+                                                B.S. Computer Science &amp Engineering <br>
+                                                May, 2015
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </div> -->
 
-                            <div>
-                                <div class="bio-bordered-cell" style="visibility: hidden;">
-                                    I'm a 25 year old software engineer from Northeast Ohio. After graduating college, I moved to Chicago and began working for Morningstar. It's wild how quickly you're able to fall into the routine, and wilder still how much quicker the time flies once you're in that routine. Two years came and went, and I felt the need to move on. I wanted to move, to shake things up. But, instead of moving straight to a new job, I decided to do something. I decided that after leaving Morningstar, I was going to travel. I was going to hit the road in my car and drive it all over. I wanted to hike up mountains and camp beneath the stars; I wanted to see a lifetime's worth of National Parks in a few months. I wanted to live an adventure, to slow time down, to make every day of my life a little bit different than the one previous. I knew that leaving a good job in a good city to live out of a car for a few months might not be the smartest choice I could make, with regard to hitting all my retirement goals and securing long term financial security for me and my hypothetical family of the future. I knew that gaps in employment do not look favorable to potential employers. Yet I knew that once the synapses fired and that idea -- that idea to travel and explore and live minimally but vividly -- was born, that I was going to follow this gut feeling to its end. Fast forward several months and I'd spent 100 days on the road, traveling through 27 U.S. states and 3 Canadian Provinces. I camped and hiked at 37 U.S. National Parks and 3 Canadian ones. I drove nearly 23,000 miles. I did most of it alone. 
-                                    <br><br>
-                                    And now I'm done with my detour. I have spent the time since my return from the road getting reaquainted with my craft. I created this website using React + NodeJS. 
+                                <div>
+                                    <div class="bio-bordered-cell" style="margin-top:50px;">
+
+                                        My name is Mitchell. I'm a twenty-something with a mellow predisposition and a tendency to err on the side of caution thanks to a life lived as a Cleveland sports fans. I graduated from college in 2015 and spent just over two years in the windy city, working and learning to navigate the treacherous seas of life. But as the seamen, who live for the ocean and its trials and obstacles, craves the land every so often, I, too, had to spend to spend some time off the waters, away from the ship that coasts and cruises into the future.  <br><br>
+
+                                        So I left Chicago and took a 100-day journey across the United States (& a sliver of Canada). My Prius became my vessel; my Nemo Hornet 1-Person tent, my berth. Nearly every day, I slept in a place entirely different from where it was I awoke. Every day was different from the one previous. There's a common mantra, seen frequently on clickbait self-motivating Tumblr pages, that says "don't live too fast." For one of the first times in my life, I listened and lived slowly and deliberately. All in all, I drove almost 23,000 miles and visited 40 American & Canadian national parks in 27 U.S. states & 2 Canadian provinces. Check out the map below to see the ground I've covered, and to see what some of Nature's fine temples look like through my eyes (& my Sony A7 camera lens).
+
+                                        <br><br>
+
+                                        
+                                    
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>                  
+                </div>
+
+                <div id="travel-content" class="content-block-map white-background">
+                    <div>
+                        <div class="block-header">Exploration</div>
+                        <div class="full-length full width">
+                            <div id="map-container"></div>
+                            <div id="modal-component"></div>
+                            <!-- <div class="map" style="width: 1253.76343px">Alternative Content</div> -->
+                        </div>
                     </div>
                 </div>
-                
-            </div>
 
-            <div id="travel-content" class="content-block-map white-background">
-                <div class="block-header">Exploration</div>
-                <div id="map-container">
-                    <div id="rsr"></div>
-                    <!-- <div class="map" style="width: 1253.76343px">Alternative Content</div> -->
-                </div>
-            </div>
+                <!-- <div id="work-content" class="content-block beige-background">
+                    <div>
+                        <div class="block-header">Work</div>
+                        <div class="block-body">
+                        
+                        </div>
+                    </div>
+                </div> -->
 
-            <div id="work-content" class="content-block">
-                <div class="block-header">Work</div>
-                <div class="block-body">
-                    <div id="react-test"></div>
-                </div>
             </div>
         </div> 
 
-        <script type="text/javascript" src="js/map_bundle.js"></script>
+        <script type="text/javascript" src="js/interactive-map-bundle.js"></script>
     </body>
 </html>

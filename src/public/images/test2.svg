@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -40,15 +40,18 @@
      inkscape:window-height="755"
      id="namedview11367"
      showgrid="false"
-     inkscape:zoom="0.32880465"
-     inkscape:cx="383.16104"
-     inkscape:cy="273.18741"
+     inkscape:zoom="1"
+     inkscape:cx="396.49421"
+     inkscape:cy="265.2213"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg2"
+     inkscape:snap-bbox="true" />
   <defs
      id="defs5">
+    <inkscape:tag
+       id="Set 1" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath232">
@@ -819,4 +822,68 @@
      clip-path="url(#clipPath232)"
      inkscape:connector-curvature="0"
      transform="matrix(0.65290087,0,0,0.65290085,-204.52506,-597.71188)" />
+  <circle
+     id="REDW"
+     cx="79.300003"
+     cy="-142.23389"
+     style="fill:#00d400;stroke-width:0.5"
+     r="5"
+     transform="scale(1,-1)"
+     inkscape:label="#rwnp" />
+  <circle
+     style="fill:#00d400;stroke-width:1.27000117"
+     id="LVNP"
+     cx="101"
+     cy="176.48389"
+     r="5"
+     inkscape:label="#lvnp" />
+  <circle
+     style="fill:#00d400;stroke-width:0.86026478"
+     id="PINN"
+     cx="85.5"
+     cy="241.98389"
+     r="5"
+     inkscape:label="#pnp" />
+  <circle
+     style="fill:#00d400;stroke-width:1.0206207"
+     id="SEQU"
+     cx="114.99999"
+     cy="251.48389"
+     r="5"
+     inkscape:label="#snp" />
+  <circle
+     style="fill:#00d400;stroke-width:1.27128339"
+     id="DVNP"
+     cx="133"
+     cy="267.98389"
+     r="5"
+     inkscape:label="#dvnp" />
+  <circle
+     style="fill:#00d400;stroke-width:0.82009244"
+     id="YOSE"
+     cx="108"
+     cy="228.98389"
+     r="5"
+     inkscape:label="#ynp" />
+  <circle
+     style="fill:#00d400;stroke-width:0.95672971"
+     id="KCNP"
+     cx="118.25"
+     cy="245.48389"
+     r="5"
+     inkscape:label="#kcnp" />
+  <circle
+     style="fill:#00d400;stroke-width:0.77702868"
+     id="CINP"
+     cx="97"
+     cy="304.73389"
+     r="5"
+     inkscape:label="#cinp" />
+  <circle
+     style="fill:#00d400;stroke-width:1.18107712"
+     id="JTNP"
+     cx="137.5"
+     cy="317.23389"
+     r="5"
+     inkscape:label="#jtnp" />
 </svg>
