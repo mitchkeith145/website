@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-web": "babel src -d lib --ignore src/public/js && mv lib/public/javascript/* src/public/js/ && webpack --display-error-details",
+    "build-web": "babel src -d lib --ignore src/public/js && mv lib/public/javascript/*.js src/public/js/ && mv lib/public/javascript/components/*.js src/public/js/ && webpack --display-error-details",
     "run-live": "PORT=80 nohup /home/ec2-user/.nvm/versions/node/v8.9.3/bin/node src/server.js",
     "run-local": "PORT=3000 node src/server.js",
-    "build": "rm mitchkeith*.zip && zip -r mitchkeith.zip .",
+    "build": "rm -f mitchkeith*.zip && zip -r mitchkeith.zip .",
     "send": "scp -i ~/.ssh/aws-key-pair.pem mitchkeith.zip ec2-user@ec2-52-40-122-84.us-west-2.compute.amazonaws.com:~/",
     "deploy": "npm run-script build-web && npm run-script build && npm run-script send"
   },

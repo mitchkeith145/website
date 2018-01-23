@@ -123,6 +123,8 @@ svg {
 
 .main-scrollable-pane {
 	width: 100%;
+	min-width: 1250px;
+	min-height: 550px;
 	height: calc(100% - 75px);
 	height: -webkit-calc(100% - 75px);
     height: -moz-calc(100% - 75px);
