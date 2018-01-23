@@ -21,6 +21,7 @@
     "express": "^4.16.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-image-gallery": "^0.8.7",
     "react-images": "^0.5.14",
     "react-load-script": "0.0.6",
     "react-modal": "^3.1.10",

@@ -41,7 +41,7 @@ function getResponseObjectFromData(data) {
 		"name": data.Item.name,
 		"photos": data.Item.photos
 	}
-}
+} // 517x352
 
 function getPhotosByParkCode(code, request, response) {
 	var searchParams = {

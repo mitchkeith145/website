@@ -27,6 +27,10 @@ import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 import Modal from 'react-modal';
 import initializeMap from './map-with-parks';
+import ImageGallery from 'react-image-gallery';
+
+// import "react-image-gallery/styles/css/image-gallery.css";
+
 Modal.setAppElement('body');
 
 const customStyles = {
@@ -42,7 +46,17 @@ const customStyles = {
 	}
 };
 
-var mapObjects = initializeMap("map-container", "832", "522.23389");
+//"500", "313.842481971153846"
+
+
+// var mapObjects = initializeMap("map-container", "832", "500");
+
+// initializeAllParks(mapObjects.parkList);
+
+// addMouseOverEventsToStates(mapObjects.states, mapObjects.parkMap);
+
+// addMouseOverEventsToProvinces(mapObjects.provinces, mapObjects.parkMap);
+
 // return { 
 // 	"states": states,
 // 	"provinces": [ CAQC, CAON],
@@ -57,14 +71,17 @@ var previousState = {
 	"parks": []
 }
 
-initializeAllParks(mapObjects.parkList);
+var mapInteraction = {
+	"park": {
+		"name": "Click on a park to view pictures!",
+		"code": null
+	}
+};
 
-addMouseOverEventsToStates(mapObjects.states, mapObjects.parkMap);
 
-addMouseOverEventsToProvinces(mapObjects.provinces, mapObjects.parkMap);
 
 // addMouseOverEventsToParks(mapObjects.parkList);
-
+var currentPageNumber = 0;
 
 function initializeAllParks(parks) {
 	console.log("Initializing " + parks.length + " parks.");
@@ -205,7 +222,22 @@ function addMouseOverEventToObject(object) {
 		fetch("/photos/" + code).then(results => {
 			return results.json();
 		}).then(data => {
-			renderModal(data.photos);
+
+			mapInteraction = {
+				"park": {
+					"name": data.name,
+					"code": data.code,
+					"photos": data.photos
+				}
+			}
+
+			console.log("rendering test componenet...");
+			console.log(mapInteraction.park);
+
+			renderGallery(data);
+			//render(<TestComponent park={ mapInteraction.park }  />, document.getElementById("gallery-container"));
+
+			// renderModal(data.photos);
 		});
 		
 
@@ -217,7 +249,7 @@ function renderPhotoAlbum(photos) {
 	var gallery = [];
 	photos.forEach(photo => {
 		gallery.push({
-			src: 'https://s3-us-west-2.amazonaws.com/loaf-personal/all/' + photo.name,
+			src: 'https://dg5blws9md5i8.cloudfront.net/all/' + photo.name,
 			width: photo.width,
 			height: photo.height
 		});
@@ -225,11 +257,20 @@ function renderPhotoAlbum(photos) {
 	render(<GalleryComponent gallery={gallery} />, document.getElementById("modal-component"));
 }
 
+function setMaxWidth(photo, maxWidth) {
+	var ratio = photo.width / photo.height;
+	if (photo.width > maxWidth) {
+		photo.width = maxWidth;
+		photo.height = (1 / ratio) * photo.height;
+	}
+}
+
 function renderModal(photos) {
 	var gallery = [];
 	photos.forEach(photo => {
+		setMaxWidth(photo, 3936);
 		gallery.push({
-			src: 'https://s3-us-west-2.amazonaws.com/loaf-personal/all/' + photo.name,
+			src: 'https://dg5blws9md5i8.cloudfront.net/all/' + photo.name,
 			width: photo.width,
 			height: photo.height
 		});
@@ -237,6 +278,135 @@ function renderModal(photos) {
 
 	render(<ModalComponent gallery={ gallery } />, document.getElementById("modal-component"));
 	// render(<GalleryComponent gallery={ gallery }  />, document.getElementById("modal-component"));
+}
+
+function renderGallery(park) {
+	// var gallery = [];
+	// park.photos.forEach(photo => {
+	// 	gallery.push({
+	// 		src: 'https://dg5blws9md5i8.cloudfront.net/all/' + photo.name,
+	// 		width: photo.width,
+	// 		height: photo.height
+	// 	});
+	// });
+
+	// park.photos = gallery;
+
+	// render(<GalleryWrapper park={ park } />, document.getElementById("gallery-container"));
+
+	var images = [];
+	park.photos.forEach(photo => {
+		images.push({
+			original: 'https://dg5blws9md5i8.cloudfront.net/all/' + photo.name,
+			thumbnail: 'https://dg5blws9md5i8.cloudfront.net/all/' + photo.name
+		})
+	})
+
+	park.photos = images;
+	render(<GalleryWrapper park={ park } />, document.getElementById("gallery-container"));
+}
+
+class GalleryWrapper extends React.Component {
+	constructor(props) {
+		super(props);
+		this.props = props;
+	}
+
+	render() {
+		return(
+			<div id="gallery-component-wrapper">
+				<div id="gallery-header">
+					{this.props.park.name} ({this.props.park.code})
+				</div>
+				<div id="gallery-wrapper">
+					<ImageGallery items={ this.props.park.photos } />
+				</div>
+			</div>
+		)
+	}
+}
+
+
+
+class NavigationComponent extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.props = props;
+	}
+
+	render() {
+		return(
+			<div className="dropdown full-height full-width">
+				<div className="dropbtn">
+					<div className="toc-bar"></div>
+					<div className="toc-bar"></div>
+					<div className="toc-bar"></div>
+				</div>
+				<div className="dropdown-content">
+					<NavigationElement displayText={ "about" } pageNumber={ 0 }/>
+					<NavigationElement displayText={ "travel & photography" } pageNumber={ 1 }/>
+				</div>
+            </div>
+		)
+	}
+
+}
+
+class NavigationElement extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.props = props;
+
+
+		this.navigate = this.navigate.bind(this);
+		console.log("Constructing...");
+		console.log(this.props);
+	}
+
+	navigate() {
+
+		if (this.props.pageNumber === 0) {
+			render(<AboutPage />, document.getElementById("about-content"));
+		} else {
+			render(<TravelPage />, document.getElementById("about-content"));
+		}
+
+		console.log('nagivating from ');
+		console.log(this.props);
+	}
+
+	render() {
+		return (
+			<a href="#" onClick={ this.navigate }>
+				{ this.props.displayText }
+			</a>
+		)
+	}
+
+}
+
+render(<NavigationComponent />, document.getElementById("toc"));
+
+class TestComponent extends React.Component {
+	constructor(props) {
+		super(props);
+		this.props = props;
+	}
+
+	// componentWillReceiveProps(nextProps) {
+ //    	this.setState({
+ //      		modalIsOpen: true
+ //    	});
+ //  	}
+
+	render() {
+		return(
+			<div>{this.props.park.name}</div>
+		)
+	}
+
 }
 
 class ModalComponent extends React.Component {
@@ -292,7 +462,9 @@ class ModalComponent extends React.Component {
 
 // render(<MapComponent />, document.getElementById("map-container"));
 
-
+// console.log("rendering test componenet...");
+// console.log(mapInteraction.park);
+// render(<TestComponent park={ mapInteraction.park } />, document.getElementById("gallery-container"));
 
 
 var stateImageMap = {
@@ -435,4 +607,152 @@ class GalleryComponent extends React.Component {
 	    )
   	}
 }
+
+
+class AboutPage extends React.Component {
+	constructor(props) {
+		super(props);
+		this.props = props;
+	}
+
+
+	render() {
+
+		return(
+			<div className="column-container">
+                <div className="left-half">
+                    <div className="column-header">...the developer &nbsp; &nbsp; &nbsp;</div>
+                    <div className="column-content content-table">
+                        <div className="content-table-row">
+                            <div className="content-table-cell">
+                                <div className="logo-placeholder">
+                                    <img src="images/ohio_state.png" className="logo"></img>
+                                </div>
+                                <div className="logo-description-placeholder">
+                                    <div className="logo-description">
+                                        Ohio State University (Columbus, OH) <br></br>
+                                        B.S. Computer Science &amp Engineering <br></br>
+                                        May, 2015
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="content-table-row">
+                            <div className="content-table-cell">
+                                <div className="logo-placeholder">
+                                    <img src="images/morningstar.png" className="logo"></img>
+                                </div>
+                                <div className="logo-description-placeholder">
+                                    <div className="logo-description">
+                                        Morningstar (Chicago, IL) <br></br>
+                                        Associate Engineer <br></br>
+                                        July 2015 to July 2017
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="content-table-row">
+                            <div className="content-table-cell">
+                                <div className="logo-placeholder">
+                                    <img src="images/cisco.png" className="logo"></img>
+                                </div>
+                                <div className="logo-description-placeholder">
+                                    <div className="logo-description">
+                                        Cisco, Systems (San Jose, CA) <br></br>
+                                        Intern - Software Engineering <br></br>
+                                        June - August, 2012 - 2014
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="right-half">
+                    <div className="column-header">...the person &nbsp; &nbsp; &nbsp;</div>
+                    <div className="column-content">
+
+                        <div>
+                            <div className="bio-bordered-cell">
+
+                                My name is Mitchell. I'm a twenty-something with a mellow predisposition and a tendency to err on the side of 
+                                caution thanks to a life lived as a Cleveland sports fans. I graduated from college in 2015 and spent just over 
+                                two years in the windy city, working and learning to navigate the treacherous seas of life. But as the seamen, 
+                                who live for the ocean and its trials and obstacles, craves the land every so often, I, too, had to spend to spend 
+                                some time off the waters, away from the ship that coasts and cruises into the future.  <br></br><br></br>
+
+                                So I left Chicago and took a 100-day journey across the United States (& a sliver of Canada). 
+                                My Prius became my vessel; my Nemo Hornet 1-Person tent, my berth. Nearly every day, I slept in a place 
+                                entirely different from where it was I awoke. Every day was different from the one previous. 
+                                There\'s a common mantra, seen frequently on clickbait self-motivating Tumblr pages, that says \"don\'t live too fast.\" 
+                                For one of the first times in my life, I listened and lived slowly and deliberately. 
+                                All in all, I drove almost 23,000 miles and visited 40 American & Canadian national parks 
+                                in 27 U.S. states & 2 Canadian provinces. Check out the map below to see the ground I\'ve covered, 
+                                and to see what some of Nature\'s fine temples look like through my eyes (& my Sony A7 camera lens).
+
+                                <br></br><br></br>
+
+                                
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+		)
+	}
+}
+
+
+class TravelPage extends React.Component {
+	constructor(props) {
+		super(props);
+		this.props = props;
+	}
+
+	componentDidMount() {
+		var mapObjects = initializeMap("map-container", "832", "500");
+
+		initializeAllParks(mapObjects.parkList);
+
+		addMouseOverEventsToStates(mapObjects.states, mapObjects.parkMap);
+
+		addMouseOverEventsToProvinces(mapObjects.provinces, mapObjects.parkMap);
+	}
+
+
+	render() {
+
+		return(
+			<div>
+                <div className="block-header">Exploration</div>
+                <div className="full-height full-width">
+                    <div id="travel-left-column">
+                        <div className="travel-pane float-right white-background">
+                            <div id="map-container"></div>
+                        </div>
+                    </div>
+                    <div id="travel-right-column">
+                        <div className="travel-pane float-left white-background">
+                            <div id="gallery-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		)
+	}
+}
+
+
+render(<AboutPage />, document.getElementById("about-content"));
+
+
+
+
+
+
+
+
+
+
+
 		
