@@ -123,7 +123,7 @@ function addMouseOverEventToObject(object) {
 		var code = this.data('id').indexOf('path') > -1 ? this.data('code') : this.data('id');
 
 		this.node.style.fill = "#217821";
-		
+		this.node.style.cursor = "pointer";
 	});
 
 	object.mouseout(function(e){

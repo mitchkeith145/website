@@ -10,8 +10,6 @@ export default class NavigationElementComponent extends React.Component {
 		this.props = props;
 
 		this.navigate = this.navigate.bind(this);
-		console.log("Constructing...");
-		console.log(this.props);
 	}
 
 	navigate() {
@@ -24,16 +22,16 @@ export default class NavigationElementComponent extends React.Component {
 	}
 
 	renderAboutPage() {
-		render(<AboutPageComponent />, document.getElementById("about-content"));
+		render(<AboutPageComponent />, document.getElementById("content-placeholder"));
 	}
 
 	renderMapPage() {
-		render(<TravelPageComponent />, document.getElementById("about-content"));
+		render(<TravelPageComponent />, document.getElementById("content-placeholder"));
 	}
 
 	render() {
 		return (
-			<a href="#" onClick={ this.navigate }>
+			<a className="nav-menu-item" onClick={ this.navigate }>
 				{ this.props.displayText }
 			</a>
 		)

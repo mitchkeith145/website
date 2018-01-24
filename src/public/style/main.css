@@ -106,6 +106,10 @@ svg {
 	overflow-y: hidden;
 }
 
+.black-background {
+	background-color: black;
+}
+
 .white-background {
 	background-color: #FFFAFA;
 }
@@ -132,18 +136,11 @@ svg {
 	overflow: auto;
 }
 
-.main-content {
-	width: 100%;
-	height: 100%;
-}
-
 .main-font {
 	font-family: 'Roboto Mono', monospace;
 }
 
 .content-block {
-	width: 100%;
-	height: 500px;
 	position: relative;
 	font-family: 'Roboto Mono', monospace;
 }
@@ -183,40 +180,88 @@ svg {
 .left-half {
 	float: left;
 	width: 400px;
-	height: 90%;
+	height: 100%;
   	margin-right: 5px%
 }
 
 .right-half {
 	float: right;
 	width: 400px;
-	height: 90%;
+	height: 100%;
   	margin-left: 5px%
 }
 
 .column-container {
 	margin: 0 auto;
-	width: 810px;
+	width: 900px;
+	height: 100%;
 }
 
 .content-table-row {
 	margin-top: 50px;
 }
 
+.content-table-cell {
+	min-height: 65px;
+	padding: 15px 16px;
+	position: relative;
+	min-width: 400px;
+	background: white;
+	margin: 25px;
+}
+
+.about-content-default {
+	border: 2px solid #929494;
+	border-radius: 10px;
+	background: #929494;
+}
+
+.about-content-hover {
+	border: 2px solid black;
+	border-radius: 10px;
+	background: #FFFAFA;
+}
+
 .bio-bordered-cell {
 	height: 100%;
-	border: 0px solid;
 	padding: 15px 16px;
-	border-radius: 16px;
 	overflow-y: auto;
 	margin-top:50px;
 }
 
-.content-table-cell {
-	height: 15%;
-	border: 0px solid;
-	padding: 15px 16px;
-	border-radius: 16px;
+.content-stable-height {
+	width: 100%;
+	height: 65px;
+	max-height: 100px;
+	position: relative;
+}
+
+.content-transition {
+	transition: height .35s linear;
+	height: 65px;
+	width: 100%;
+}
+
+.collapse-image {
+	width: 14px;
+	height: 14px;
+	margin-top: 3px;
+	margin-left: 3px;
+}
+
+.content-expanded {
+	height: 250px;
+}
+
+.expanded-content-container {
+	height: 175px;
+	width: 100%;
+	overflow: auto;
+	margin-top: 10px;
+}
+
+.test-height {
+	height: 300;
 }
 
 #toc {
@@ -239,8 +284,72 @@ svg {
 }
 
 .logo-placeholder {
-	width:25%; 
+	width: 25%;
 	float: left;
+	min-height: 65px;
+}
+
+.expand-button-container {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: -5px;
+	right: -5px;
+}
+
+.expand-button-placeholder {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	cursor: pointer;
+	border: 2px solid black;
+	border-radius: 3px;
+}
+
+.nav-menu-item {
+	cursor: pointer;
+}
+
+.expand-button-placeholder-hover {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.expand-button-placeholder-hover > div {
+	background: white;
+}
+
+/*.expand-button-placeholder:hover {
+	background: #d3d3d3;
+}*/
+
+.expand-button-horizontal-part {
+	position: absolute;
+	width: 16px;
+	height: 2px;
+	top: 9px;
+	left: 2px;
+}
+
+
+.expand-button-vertical-part {
+	position: absolute;
+	height: 16px;
+	width: 2px;
+	top: 2px;
+	left: 9px;
+}
+
+.content-shifting-height-expanded {
+	height: 150px;
+	width: 100%;
+}
+
+.content-shifting-height-collapsed {
+	display: none;
 }
 
 .logo {
@@ -252,14 +361,24 @@ svg {
 
 .logo-description-placeholder {
 	width: 70%; 
-	float: right; 
+	float: left; 
 	height: 100%;
+	max-width: 265px;
+	text-align: left;
 }
 
 .logo-description {
 	position: relative; 
 	top: 50%; 
 	transform: translateY(-50%);
+}
+
+.hide {
+	display: none;
+}
+
+.scroll-y {
+	overflow-y: auto;
 }
 
 /* Dropdown Button */

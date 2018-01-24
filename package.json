@@ -32,6 +32,8 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "image-size": "^0.6.2",
+    "radium": "^0.21.1",
+    "react-animations": "^1.0.0",
     "react-svg-loader": "^2.1.0"
   }
 }
