@@ -43,15 +43,19 @@ export default class AboutElementComponent extends React.Component {
 //<div className="expand-button-vertical-part black-background"></div>
 
 	render() {
+		var cellClassName;
+
+
+
 		return(
 			<div className="content-table-row" onMouseEnter={ () => this.hoverContent(true) } onMouseLeave={ () => this.hoverContent(false) }>
-                <div className={ this.state.contentHovered ? "about-content-hover content-table-cell" : (this.state.expanded ? "about-content-hover content-table-cell" : "content-table-cell about-content-default") }>
+                <div className={[this.state.contentHovered && "about-content-hover", this.props.mobile && "content-table-cell-mobile", !this.props.mobile && "content-table-cell", !this.state.expanded && "about-content-default"].join(" ") }>
                 	<div className={['content-transition', this.state.expanded && 'content-expanded'].join(' ')}>
                 		<div className="content-stable-height">
 	            			<div className="logo-placeholder">
 		                        <img src={this.props.details.src} className="logo"></img>
 		                    </div>
-		                    <div className="expand-button-container" onClick={ this.expand }  onMouseEnter={ () => this.hoverExpand(true) } onMouseLeave={ () => this.hoverExpand(false) }>
+		                    <div className={ this.props.mobile ? "expand-button-container-mobile" : "expand-button-container" } onClick={ this.expand }  onMouseEnter={ () => this.hoverExpand(true) } onMouseLeave={ () => this.hoverExpand(false) }>
 		                        <div className={ this.state.expandHovered ? "expand-button-placeholder main-background" : "expand-button-placeholder" }>
 		                        	<img src={ this.state.expanded ? "images/collapse.png" : "images/expand.png" } className={ this.state.expanded ? "collapse-image" : "full-width full-height" }></img>
 		                        </div>

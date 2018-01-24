@@ -11,7 +11,7 @@ export default class NavigationComponent extends React.Component {
 
 	render() {
 		return(
-			<div className="dropdown full-height full-width">
+			<div className="dropdown">
 				<div className="dropbtn">
 					<div className="toc-bar"></div>
 					<div className="toc-bar"></div>
