@@ -24,19 +24,6 @@ svg {
 	width: 500px;
 }
 
-#travel-right-column {
-	float: right;
-	width: 50%;
-	height: 100%;
-}
-
-#travel-left-column {
-	float: left;
-	width: 50%;
-	height: 100%;
-	position: relative;
-}
-
 #gallery-component-wrapper {
 	height: 385px; 
 	width: 100%;
@@ -78,6 +65,25 @@ svg {
 	width: 600px;
 	border-top: 2px solid black;
 	border-bottom: 2px solid black;
+}
+
+.travel-pane-no-border {
+	min-height: 445px;
+	height: 100%;
+	width: 600px;
+}
+
+.travel-right-column {
+	float: right;
+	width: 50%;
+	height: 100%;
+}
+
+.travel-left-column {
+	float: left;
+	width: 50%;
+	height: 100%;
+	position: relative;
 }
 
 .float-right {
@@ -159,12 +165,22 @@ svg {
 	width: 100%;
 	height: 10%;
 	text-align: center;
-	padding-top: 25px;
+	display: table;
 }
 
 .block-body {
 	width: 100%;
 	height: 90%;
+	overflow: hidden;
+}
+
+.auto-overflow {
+	overflow: auto;
+}
+
+.center-content {
+	vertical-align: middle;
+	display: table-cell;
 }
 
 .column-header {
@@ -207,10 +223,18 @@ svg {
 	height: 100%;
 }
 
+.relative-position {
+	position: relative;
+}
 
 
 .content-table-row {
 	margin-top: 50px;
+}
+
+.radio-select-panel-container {
+	margin: 10px auto;
+	width: 60%;
 }
 
 .content-table-cell-mobile {
@@ -232,6 +256,7 @@ svg {
 	border: 2px solid #929494;
 	border-radius: 10px;
 	background: #929494;
+	overflow: hidden;
 }
 
 .about-content-hover {
@@ -275,7 +300,7 @@ svg {
 	height: 175px;
 	width: 100%;
 	overflow: auto;
-	margin-top: 10px;
+	margin-top: 15px;
 }
 
 .test-height {
@@ -297,7 +322,7 @@ svg {
 .name-placeholder {
 	position: absolute;
   	top: 50%;
-  	right: 75px;
+  	right: 5%;
   	transform: translateY(-50%);
 }
 

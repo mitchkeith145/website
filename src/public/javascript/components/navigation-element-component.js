@@ -22,11 +22,11 @@ export default class NavigationElementComponent extends React.Component {
 	}
 
 	renderAboutPage() {
-		render(<AboutPageComponent />, document.getElementById("content-placeholder"));
+		render(<AboutPageComponent mobile={ this.props.mobile } />, document.getElementById("content-placeholder"));
 	}
 
 	renderMapPage() {
-		render(<TravelPageComponent />, document.getElementById("content-placeholder"));
+		render(<TravelPageComponent mobile={ this.props.mobile } />, document.getElementById("content-placeholder"));
 	}
 
 	render() {

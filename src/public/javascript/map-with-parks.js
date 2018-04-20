@@ -261,29 +261,29 @@ export default function initializeMap (elementId, length, height) {
 	var YOSE = rsr.circle(56, 241, 4).attr({id: 'YOSE',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.63','stroke-opacity': '0'}).data('id', 'YOSE');
 	var BLCA = rsr.circle(215, 262, 4).attr({id: 'BLCA',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.34','stroke-opacity': '0'}).data('id', 'BLCA');
 	var YELL = rsr.circle(196, 151, 4).attr({id: 'YELL',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.43','stroke-opacity': '0'}).data('id', 'YELL');
-	var ROMO = rsr.circle(238, 240, 4).attr({id: 'ROMO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.37','stroke-opacity': '0'}).data('id', 'ROMO');
+	// var ROMO = rsr.circle(238, 240, 4).attr({id: 'ROMO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.37','stroke-opacity': '0'}).data('id', 'ROMO');
 	var GRSA = rsr.circle(236, 284, 4).attr({id: 'GRSA',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.71','stroke-opacity': '0'}).data('id', 'GRSA');
 	var MEVE = rsr.circle(202, 280, 4).attr({id: 'MEVE',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '1.21','stroke-opacity': '0'}).data('id', 'MEVE');
-	var VOYA = rsr.circle(408, 119, 4).attr({id: 'VOYA',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.88','stroke-opacity': '0'}).data('id', 'VOYA');
+	// var VOYA = rsr.circle(408, 119, 4).attr({id: 'VOYA',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.88','stroke-opacity': '0'}).data('id', 'VOYA');
 	var COFA = rsr.circle(433, 156, 4).attr({id: 'COFA',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.88','stroke-opacity': '0'}).data('id', 'COFA');
 	var SLMO = rsr.circle(640, 211, 4).attr({id: 'SLMO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.68','stroke-opacity': '0'}).data('id', 'SLMO');
 	var QUVI = rsr.circle(577, 202, 4).attr({id: 'QUVI',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.67','stroke-opacity': '0'}).data('id', 'QUVI');
 	var HOSP = rsr.circle(406, 358, 4).attr({id: 'HOSP',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.79','stroke-opacity': '0'}).data('id', 'HOSP');
-	var PIRO = rsr.circle(485, 150, 4).attr({id: 'PIRO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.62','stroke-opacity': '0'}).data('id', 'PIRO');
+	// var PIRO = rsr.circle(485, 150, 4).attr({id: 'PIRO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.62','stroke-opacity': '0'}).data('id', 'PIRO');
 	var CLCA = rsr.circle(473, 231, 4).attr({id: 'CLCA',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.87','stroke-opacity': '0'}).data('id', 'CLCA');
-	var SHEN = rsr.circle(585, 286, 4).attr({id: 'SHEN',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.62','stroke-opacity': '0'}).data('id', 'SHEN');
-	var ISRO = rsr.circle(463, 125, 4).attr({id: 'ISRO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.7','stroke-opacity': '0'}).data('id', 'ISRO');
-	var GRSM = rsr.circle(529, 337, 4).attr({id: 'GRSM',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.81','stroke-opacity': '0'}).data('id', 'GRSM');
+	// var SHEN = rsr.circle(585, 286, 4).attr({id: 'SHEN',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.62','stroke-opacity': '0'}).data('id', 'SHEN');
+	// var ISRO = rsr.circle(463, 125, 4).attr({id: 'ISRO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.7','stroke-opacity': '0'}).data('id', 'ISRO');
+	// var GRSM = rsr.circle(529, 337, 4).attr({id: 'GRSM',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.81','stroke-opacity': '0'}).data('id', 'GRSM');
 	var HIPE = rsr.circle(633, 177, 4).attr({id: 'HIPE',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '1.64','stroke-opacity': '0'}).data('id', 'HIPE');
 	var CUVA = rsr.circle(544, 239, 4).attr({id: 'CUVA',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '1.12','stroke-opacity': '0'}).data('id', 'CUVA');
 	var ALLE = rsr.circle(583, 233, 4).attr({id: 'ALLE',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.49','stroke-opacity': '0'}).data('id', 'ALLE');
-	var MACA = rsr.circle(493, 310, 4).attr({id: 'MACA',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.54','stroke-opacity': '0'}).data('id', 'MACA');
-	var CONG = rsr.circle(578, 366, 4).attr({id: 'CONG',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.53','stroke-opacity': '0'}).data('id', 'CONG');
+	// var MACA = rsr.circle(493, 310, 4).attr({id: 'MACA',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.54','stroke-opacity': '0'}).data('id', 'MACA');
+	// var CONG = rsr.circle(578, 366, 4).attr({id: 'CONG',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.53','stroke-opacity': '0'}).data('id', 'CONG');
 	var WAPO = rsr.circle(672, 197, 4).attr({id: 'WAPO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.49','stroke-opacity': '0'}).data('id', 'WAPO');
 	var WHMO = rsr.circle(665, 166, 4).attr({id: 'WHMO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.82','stroke-opacity': '0'}).data('id', 'WHMO');
-	var BISC = rsr.circle(599, 514, 4).attr({id: 'BISC',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.6','stroke-opacity': '0'}).data('id', 'BISC');
-	var EVER = rsr.circle(590, 517, 4).attr({id: 'EVER',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.5','stroke-opacity': '0'}).data('id', 'EVER');
-	var DRTO = rsr.circle(563, 532, 4).attr({id: 'DRTO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.53','stroke-opacity': '0'}).data('id', 'DRTO');
+	// var BISC = rsr.circle(599, 514, 4).attr({id: 'BISC',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.6','stroke-opacity': '0'}).data('id', 'BISC');
+	// var EVER = rsr.circle(590, 517, 4).attr({id: 'EVER',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.5','stroke-opacity': '0'}).data('id', 'EVER');
+	// var DRTO = rsr.circle(563, 532, 4).attr({id: 'DRTO',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.53','stroke-opacity': '0'}).data('id', 'DRTO');
 	var JQNP = rsr.circle(655, 110, 4).attr({id: 'JQNP',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.99','stroke-opacity': '0'}).data('id', 'JQNP');
 	var ACAD = rsr.circle(704, 154, 4).attr({id: 'ACAD',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '1.28','stroke-opacity': '0'}).data('id', 'ACAD');
 	var FORILLON = rsr.circle(729, 70, 4).attr({id: 'FORILLON',parent: 'layer2',fill: '#ff0000',"fill-opacity": '1',"stroke-width": '0.59','stroke-opacity': '0'}).data('id', 'FORILLON');
@@ -537,29 +537,29 @@ export default function initializeMap (elementId, length, height) {
 		YOSE ,
 		BLCA ,
 		YELL ,
-		ROMO ,
+		// ROMO ,
 		GRSA ,
 		MEVE ,
-		VOYA ,
+		// VOYA ,
 		COFA ,
 		SLMO ,
 		QUVI ,
 		HOSP ,
-		PIRO ,
+		// PIRO ,
 		CLCA ,
-		SHEN ,
-		ISRO ,
-		GRSM ,
+		// SHEN ,
+		// ISRO ,
+		// GRSM ,
 		HIPE ,
 		CUVA ,
 		ALLE ,
-		MACA ,
-		CONG ,
+		// MACA ,
+		// CONG ,
 		WAPO ,
 		WHMO ,
-		BISC ,
-		EVER ,
-		DRTO ,
+		// BISC ,
+		// EVER ,
+		// DRTO ,
 		JQNP ,
 		ACAD ,
 		FORILLON ,
@@ -709,10 +709,10 @@ export default function initializeMap (elementId, length, height) {
 					"object": GRSA,
 					"name": "Great Sand Dunes National Park"
 				},
-				{
-					"object": ROMO,
-					"name": "Rocky Mountain National Park"
-				},
+				// {
+				// 	"object": ROMO,
+				// 	"name": "Rocky Mountain National Park"
+				// },
 				{
 					"object": BLCA,
 					"name": "Black Canyon of the Gunnison National Park"
@@ -750,50 +750,50 @@ export default function initializeMap (elementId, length, height) {
 				}
 			]
 		},
-		"USFL": {
-			"name": "Florida",
-			"parks": [
-				{
-					"object": BISC,
-					"name": "Biscayne National Park"
-				},
-				{
-					"object": DRTO,
-					"name": "Dry Tortugas National Park"
-				},
-				{
-					"object": EVER,
-					"name": "Everglades National Park"
-				}
-			]
-		},
-		"USSC": {
-			"name": "South Carolina",
-			"parks": [
-				{
-					"object": CONG,
-					"name": "Congaree National Park"
-				}
-			]
-		},
-		"USTN": {
-			"name": "Tennessee",
-			"parks": [
-				{
-					"object": GRSM,
-					"name": "Great Smokey Mountains National Park"
-				}
-			]
-		},
-		"USKY": {
-			"name": "Kentucky",
-			"parks": [
-				{
-					"object": MACA,
-					"name": "Mammoth Cave National Park"
-				}
-			]
-		},
+		// "USFL": {
+		// 	"name": "Florida",
+		// 	"parks": [
+		// 		{
+		// 			"object": BISC,
+		// 			"name": "Biscayne National Park"
+		// 		},
+		// 		{
+		// 			"object": DRTO,
+		// 			"name": "Dry Tortugas National Park"
+		// 		},
+		// 		{
+		// 			"object": EVER,
+		// 			"name": "Everglades National Park"
+		// 		}
+		// 	]
+		// },
+		// "USSC": {
+		// 	"name": "South Carolina",
+		// 	"parks": [
+		// 		{
+		// 			"object": CONG,
+		// 			"name": "Congaree National Park"
+		// 		}
+		// 	]
+		// },
+		// "USTN": {
+		// 	"name": "Tennessee",
+		// 	"parks": [
+		// 		{
+		// 			"object": GRSM,
+		// 			"name": "Great Smokey Mountains National Park"
+		// 		}
+		// 	]
+		// },
+		// // "USKY": {
+		// // 	"name": "Kentucky",
+		// // 	"parks": [
+		// // 		{
+		// // 			"object": MACA,
+		// // 			"name": "Mammoth Cave National Park"
+		// // 		}
+		// // 	]
+		// // },
 		"USOH": {
 			"name": "Ohio",
 			"parks": [
@@ -803,15 +803,15 @@ export default function initializeMap (elementId, length, height) {
 				}
 			]
 		},
-		"USVA": {
-			"name": "Virgina",
-			"parks": [
-				{
-					"object": SHEN,
-					"name": "Shenandoah National Park"
-				}
-			]
-		},
+		// "USVA": {
+		// 	"name": "Virgina",
+		// 	"parks": [
+		// 		{
+		// 			"object": SHEN,
+		// 			"name": "Shenandoah National Park"
+		// 		}
+		// 	]
+		// },
 		"USME": {
 			"name": "Maine",
 			"parks": [
@@ -891,15 +891,15 @@ export default function initializeMap (elementId, length, height) {
 				}
 			]
 		},
-		"USMN": {
-			"name": "Minnesota",
-			"parks": [
-				{
-					"object": VOYA,
-					"name": "Voyageurs National Park"
-				}
-			]
-		},
+		// "USMN": {
+		// 	"name": "Minnesota",
+		// 	"parks": [
+		// 		{
+		// 			"object": VOYA,
+		// 			"name": "Voyageurs National Park"
+		// 		}
+		// 	]
+		// },
 		"USWY": {
 			"name": "Wyoming",
 			"parks": [
@@ -944,19 +944,19 @@ export default function initializeMap (elementId, length, height) {
 				}
 			]
 		},
-		"USMI": {
-			"name": "Michigan",
-			"parks": [
-				{
-					"object": ISRO,
-					"name": "Isle Royal National Park"
-				},
-				{
-					"object": PIRO,
-					"name": "Pictured Rocks National Lakeshore"
-				}
-			]
-		},
+		// "USMI": {
+		// 	"name": "Michigan",
+		// 	"parks": [
+		// 		{
+		// 			"object": ISRO,
+		// 			"name": "Isle Royal National Park"
+		// 		},
+		// 		{
+		// 			"object": PIRO,
+		// 			"name": "Pictured Rocks National Lakeshore"
+		// 		}
+		// 	]
+		// },
 		"USWI": {
 			"name": "Wisconsin",
 			"parks": [

@@ -18,8 +18,8 @@ export default class NavigationComponent extends React.Component {
 					<div className="toc-bar"></div>
 				</div>
 				<div className="dropdown-content">
-					<NavigationElementComponent displayText={ "about" } pageNumber={ 0 }/>
-					<NavigationElementComponent displayText={ "travel & photography" } pageNumber={ 1 }/>
+					<NavigationElementComponent mobile={ this.props.mobile } displayText={ "about" } pageNumber={ 0 }/>
+					<NavigationElementComponent mobile={ this.props.mobile } displayText={ "travel & photography" } pageNumber={ 1 }/>
 				</div>
             </div>
 		)

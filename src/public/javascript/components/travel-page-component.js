@@ -30,15 +30,17 @@ export default class TravelPageComponent extends React.Component {
 
 		return(
 			<div>
-                <div className="block-header">Exploration</div>
-                <div className="full-height full-width">
-                    <div id="travel-left-column">
-                        <div className="travel-pane float-right white-background">
+                <div className="block-header">
+            		<span className="center-content">Exploration</span>
+            	</div>
+                <div className="block-body">
+                    <div className={ this.props.mobile ? "full-width full-height auto-overflow" : "travel-left-column" }>
+                        <div className={ this.props.mobile ? "travel-pane-no-border white-background" : "travel-pane float-right white-background" }>
                             <div id="map-container"></div>
                         </div>
                     </div>
-                    <div id="travel-right-column">
-                        <div className="travel-pane float-left white-background">
+                    <div className={ this.props.mobile ? "full-width full-height auto-overflow" : "travel-right-column" }>
+                        <div className={ this.props.mobile ? "travel-pane-no-border	 white-background" : "travel-pane float-left white-background" }>
                             <div id="gallery-container"></div>
                         </div>
                     </div>

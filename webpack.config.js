@@ -15,15 +15,13 @@ module.exports = {
 	    rules: [
       	// rules for modules (configure loaders, parser options, etc.)
 
-	  		{
-	  			test: /\.svg$/,
-	  			use: [  { loader: "babel-loader" },
-						{ 	loader: "react-svg-loader",
-	  						options: {
-	        					jsx: true // true outputs JSX tags
-	      					}
-	    				}
-	  			]
+			{
+				test: /\.jsx?$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader',
+				query: {
+		          presets: ['es2015', 'react']
+		        }
 			}
 		]
 	}

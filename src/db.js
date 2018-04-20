@@ -71,7 +71,8 @@ var codeNameMap = {
 	"SLMO": "Slide Mountain Wilderness",
 	"TONT": "Tonto National Forest",
 	"WHMO": "White Mountain National Forest",
-	"WAPO": "Walden Pond"
+	"WAPO": "Walden Pond",
+	"PIRO": "Pictured Rocks National Lakeshore"
 }
 
 // Object.keys(codeNameMap).map((key) => {
@@ -136,46 +137,53 @@ fs.readdir("/Users/mitch/Desktop/tmp/", (err, directories) => {
 
 						var imagesTrimmed = images.indexOf(".DS_Store") > -1 ? images.splice(images.indexOf(".DS_Store"), 1): images;
 					
-						images.forEach(image => {
+						// console.log(images);
+
+						if (images.length === 4) {
+							console.log(park.symbol);
+							console.log(images);
+						}
+
+						// images.forEach(image => {
 							
-							sizeOf("/Users/mitch/Desktop/tmp/" + directory + "/" + image, (err, dimensions) => {
+						// 	sizeOf("/Users/mitch/Desktop/tmp/" + directory + "/" + image, (err, dimensions) => {
 								
-								if (err) {
-									console.log("sizeOf broke:");
-									console.log(err);
-								} else {
-									park.photos.push({
-										"name": image,
-										"width": dimensions.width,
-										"height": dimensions.height
-									});
-									if (images.length === park.photos.length) {
-										parks.push(park);
+						// 		if (err) {
+						// 			console.log("sizeOf broke:");
+						// 			console.log(err);
+						// 		} else {
+						// 			park.photos.push({
+						// 				"name": image,
+						// 				"width": dimensions.width,
+						// 				"height": dimensions.height
+						// 			});
+						// 			if (images.length === park.photos.length) {
+						// 				parks.push(park);
 
-										var params = {
-											TableName: "PhotoAlbum",
-											Item: {
-												"symbol": park.symbol,
-												"name": park.name,
-												"photos": park.photos
-											}
-										}
-										docClient.put(params, function(err, data) {
-											if (err) {
-												console.error("Unable to add park", park.symbol, ". Error JSON:", JSON.stringify(err, null, 2));
-											} else {
-												console.log("PutItem succeeded:", park.symbol);
-											}
-									    });
+						// 				var params = {
+						// 					TableName: "PhotoAlbum",
+						// 					Item: {
+						// 						"symbol": park.symbol,
+						// 						"name": park.name,
+						// 						"photos": park.photos
+						// 					}
+						// 				}
+						// 				docClient.put(params, function(err, data) {
+						// 					if (err) {
+						// 						console.error("Unable to add park", park.symbol, ". Error JSON:", JSON.stringify(err, null, 2));
+						// 					} else {
+						// 						console.log("PutItem succeeded:", park.symbol);
+						// 					}
+						// 			    });
 
-										if (parks.length === directories.length) {
-											console.log("Done. Result: ");
-											console.log(JSON.stringify(parks));
-										}
-									}
-								}
-							});
-						});
+						// 				if (parks.length === directories.length) {
+						// 					console.log("Done. Result: ");
+						// 					console.log(JSON.stringify(parks));
+						// 				}
+						// 			}
+						// 		}
+						// 	});
+						// });
 					}
 				}
 			});

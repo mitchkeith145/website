@@ -49,7 +49,7 @@ export default class AboutElementComponent extends React.Component {
 
 		return(
 			<div className="content-table-row" onMouseEnter={ () => this.hoverContent(true) } onMouseLeave={ () => this.hoverContent(false) }>
-                <div className={[this.state.contentHovered && "about-content-hover", this.props.mobile && "content-table-cell-mobile", !this.props.mobile && "content-table-cell", !this.state.expanded && "about-content-default"].join(" ") }>
+                <div className={[(this.state.contentHovered || this.state.expanded) && "about-content-hover", this.props.mobile && "content-table-cell-mobile", !this.props.mobile && "content-table-cell", !this.state.expanded && "about-content-default"].join(" ") }>
                 	<div className={['content-transition', this.state.expanded && 'content-expanded'].join(' ')}>
                 		<div className="content-stable-height">
 	            			<div className="logo-placeholder">
@@ -66,7 +66,7 @@ export default class AboutElementComponent extends React.Component {
 		                        </div>
 		                    </div>
 	                    </div>
-	                    <div className={ this.state.expanded ? "expanded-content-container" : "hide" }>
+	                    <div className={ this.state.expanded ? "expanded-content-container" : "expanded-content-container" }>
 	                    	{ this.props.details.long }
 	                    </div>
                 	</div>

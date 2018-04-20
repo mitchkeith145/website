@@ -24,7 +24,7 @@ function initializeAllParks(parks) {
 
 function hideParks(parks) {
 	parks.forEach(function(park) {
-		setStyleToObject(park, { "opacity": 0.0 });
+		setStyleToObject(park, { "opacity": 0.0, "fill": "#00D400" });
 	});	
 }
 

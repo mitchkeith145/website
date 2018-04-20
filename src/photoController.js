@@ -36,11 +36,21 @@ function isEmpty(jsonObject) {
 }
 
 function getResponseObjectFromData(data) {
-	return {
-		"code": data.Item.symbol,
-		"name": data.Item.name,
-		"photos": data.Item.photos
+	if (data && data.Item) {
+		return {
+			"code": data.Item.symbol,
+			"name": data.Item.name,
+			"photos": data.Item.photos
+		}
+	} else {
+		return {
+			"code": "N/A",
+			"name": "Park could not be found.",
+			"photos": []
+		}
 	}
+
+	
 } // 517x352
 
 function getPhotosByParkCode(code, request, response) {
