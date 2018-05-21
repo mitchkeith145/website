@@ -1,10 +1,5 @@
 var AWS = require("aws-sdk");
 var userConfig = require('./config.json')
-/*
-
-load table with data snippet
-
-*/
 
 var fs = require('fs');
 
@@ -16,18 +11,6 @@ AWS.config.update({
 });
 
 var docClient = new AWS.DynamoDB.DocumentClient();
-
-// .then(function(err, data) {
-// 		console.log(err);
-// 		console.log(data);
-
-// 		res.status(200);
-// 		res.end(data);
-// 	}).error(function(err) {
-// 		console.log(err);
-// 		res.status(200);
-// 		res.end("<html><body><div>whooops</div><div>" + JSON.stringify(err) + "</div></body></html>");
-// 	})
 
 function isEmpty(jsonObject) {
 	var empty = {};
@@ -51,7 +34,7 @@ function getResponseObjectFromData(data) {
 	}
 
 	
-} // 517x352
+}
 
 function getPhotosByParkCode(code, request, response) {
 	var searchParams = {
@@ -67,8 +50,6 @@ function getPhotosByParkCode(code, request, response) {
 	        response.status(200);
 			response.end("<html><body><div>whooops</div><div>" + JSON.stringify(err) + "</div></body></html>");
 	    } else {
-	        console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
-
 	        response.status(200);
 			response.end(JSON.stringify(getResponseObjectFromData(data)));
 	    }

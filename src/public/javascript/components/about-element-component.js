@@ -14,11 +14,6 @@ export default class AboutElementComponent extends React.Component {
 	}
 	
 	expand() {
-		console.log("Attempting expansion.");
-		if (typeof this.props.expand === 'function') {
-			// prevent bubbling back to parent; not liking where that's going.
-			// this.props.expand(this.props.side, this.props.details);
-		}
 
 		this.setState({
 			expanded: !this.state.expanded,
@@ -27,8 +22,6 @@ export default class AboutElementComponent extends React.Component {
 	}
 
 	hoverContent(val) {
-		console.log(val ? "mouseEnter" : "mouseLeave");
-		// this.state.expanded = val;
 		this.setState({
 			contentHovered: val
 		});
@@ -39,8 +32,6 @@ export default class AboutElementComponent extends React.Component {
 			expandHovered: val
 		});
 	}
-//<div className="expand-button-horizontal-part black-background"></div>
-//<div className="expand-button-vertical-part black-background"></div>
 
 	render() {
 		var cellClassName;

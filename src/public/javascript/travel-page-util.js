@@ -17,7 +17,6 @@ var mapInteraction = {
 var enableHiding = true;
 
 function initializeAllParks(parks) {
-	console.log("Initializing " + parks.length + " parks.");
 	addMouseOverEventsToParks(parks);
 	hideParks(parks);
 }
@@ -39,18 +38,9 @@ function setStyleToObject(object, style) {
 }
 
 function addMouseOverEventsToParks(parks) {
-	var left, right;
-	var i = 0;
 	parks.forEach(function(park) {
-
-		console.log("Adding Mouse Over Event to " + park.data('id'));
-		console.log(park);
-		i++;
 		addMouseOverEventToObject(park);
-
 	});
-
-	console.log("Added " + i + " events.");
 }
 
 function addMouseOverEventsToProvinces(provinces, parkMap) {
@@ -69,7 +59,6 @@ function addMouseOverEventToStateWithStyle(object, style) {
 	object.mouseover(function(e) {
 		var code = this.data('id').indexOf('path') > -1 ? this.data('code') : this.data('id');
 		this.node.attr(style);
-
 	});
 }
 
@@ -167,7 +156,6 @@ function renderGallery(park) {
 	park.photos = images;
 	render(<GalleryWrapperComponent park={ park } />, document.getElementById("gallery-container"));
 }
-
 
 module.exports = {
 	initializeAllParks: initializeAllParks,
