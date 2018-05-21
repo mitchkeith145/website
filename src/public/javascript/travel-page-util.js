@@ -67,10 +67,7 @@ function addMouseOverEventToPath(path, parkMap) {
 
 		this.node.style.fill = "#929494";
 		var code = this.data('id').indexOf('path') > -1 ? this.data('code') : this.data('id');		
-		
-		console.log("made " + code + " green.");
 
-		// mouse over state with parks.
 		if (typeof parkMap[code] !== "undefined") {
 		
 			setStyleToObjects(parkMap[code].parks, { "opacity": 1.0 });
@@ -78,7 +75,6 @@ function addMouseOverEventToPath(path, parkMap) {
 			if (previousState.object != null && previousState.code != code && enableHiding) {
 
 				previousState.object.style.fill = "#d3d3d3";
-				console.log("made " + previousState.code + " default");
 				setStyleToObjects(previousState.parks, { "opacity": 0.0 });	
 			}
 
@@ -99,7 +95,6 @@ function addMouseOverEventToPath(path, parkMap) {
 		var code = this.data('id').indexOf('path') > -1 ? this.data('code') : this.data('id');
 		if (typeof parkMap[code] === "undefined") {
 			this.node.style.fill = "#d3d3d3";
-			console.log("made " + code + " default");
 		}
 	});
 }
@@ -120,11 +115,8 @@ function addMouseOverEventToObject(object) {
 	});
 
 	object.mouseup(function(e) {
-		
 
 		var code = this.data('id').indexOf('path') > -1 ? this.data('code') : this.data('id');
-		
-		console.log("HTTP GET mitchkeith.com/photos/" + code);	
 
 		fetch("/photos/" + code).then(results => {
 			return results.json();

@@ -1,11 +1,5 @@
 var AWS = require("aws-sdk");
 
-/*
-
-load table with data snippet
-
-*/
-
 var fs = require('fs');
 var sizeOf = require('image-size');
 
@@ -75,16 +69,6 @@ var codeNameMap = {
 	"PIRO": "Pictured Rocks National Lakeshore"
 }
 
-// Object.keys(codeNameMap).map((key) => {
-	
-// 	if (!fs.existsSync("/Users/mitch/Desktop/tmp/" + key)){
-// 	    fs.mkdirSync("/Users/mitch/Desktop/tmp/" + key);
-// 	}
-// });
-
-// for (var key in codeNameMap) {
-
-// }
 
 AWS.config.update({
   region: "us-west-2",
@@ -143,47 +127,6 @@ fs.readdir("/Users/mitch/Desktop/tmp/", (err, directories) => {
 							console.log(park.symbol);
 							console.log(images);
 						}
-
-						// images.forEach(image => {
-							
-						// 	sizeOf("/Users/mitch/Desktop/tmp/" + directory + "/" + image, (err, dimensions) => {
-								
-						// 		if (err) {
-						// 			console.log("sizeOf broke:");
-						// 			console.log(err);
-						// 		} else {
-						// 			park.photos.push({
-						// 				"name": image,
-						// 				"width": dimensions.width,
-						// 				"height": dimensions.height
-						// 			});
-						// 			if (images.length === park.photos.length) {
-						// 				parks.push(park);
-
-						// 				var params = {
-						// 					TableName: "PhotoAlbum",
-						// 					Item: {
-						// 						"symbol": park.symbol,
-						// 						"name": park.name,
-						// 						"photos": park.photos
-						// 					}
-						// 				}
-						// 				docClient.put(params, function(err, data) {
-						// 					if (err) {
-						// 						console.error("Unable to add park", park.symbol, ". Error JSON:", JSON.stringify(err, null, 2));
-						// 					} else {
-						// 						console.log("PutItem succeeded:", park.symbol);
-						// 					}
-						// 			    });
-
-						// 				if (parks.length === directories.length) {
-						// 					console.log("Done. Result: ");
-						// 					console.log(JSON.stringify(parks));
-						// 				}
-						// 			}
-						// 		}
-						// 	});
-						// });
 					}
 				}
 			});
@@ -191,92 +134,5 @@ fs.readdir("/Users/mitch/Desktop/tmp/", (err, directories) => {
 	}
 });
 
-// console.log("Importing movies into DynamoDB. Please wait.");
-
-// var albums = JSON.parse(fs.readFileSync('test.json', 'utf8'));
-
-// albums.forEach(function(album) {
-// 	var params = {
-// 		TableName: "PhotoAlbum",
-// 		Item: {
-// 			"symbol": album.symbol,
-// 			"name": album.name,
-// 			"photos": album.photos
-// 		}
-// 	}
-
-// 	docClient.put(params, function(err, data) {
-//        if (err) {
-//            console.error("Unable to add album", album.symbol, ". Error JSON:", JSON.stringify(err, null, 2));
-//        } else {
-//            console.log("PutItem succeeded:", album.symbol);
-//        }
-//     });
-// });
-
-
-/*
-
-read from table snippet
-
-*/
-
-// var tableName = "PhotoAlbum";
-
-// var searchParams = {
-// 	TableName: tableName,
-// 	Key: {
-// 		"symbol": "CRLA"
-// 	}
-// }
-
-// docClient.get(searchParams, function(err, data) {
-//     if (err) {
-//         console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
-//     } else {
-//         console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
-//     }
-// });
-
-
-/*
-
-create / delete table snippet
-
-*/
-
 var dynamodb = new AWS.DynamoDB();
 
-// var params = {
-//     TableName : "PhotoAlbum"
-// };
-
-// dynamodb.deleteTable(params, function(err, data) {
-//     if (err) {
-//         console.error("Unable to delete table. Error JSON:", JSON.stringify(err, null, 2));
-//     } else {
-//         console.log("Deleted table. Table description JSON:", JSON.stringify(data, null, 2));
-//     }
-// });
-
-// var params = {
-//     TableName : "PhotoAlbum",
-//     KeySchema: [       
-//         { AttributeName: "symbol", KeyType: "HASH" }
-//     ],
-//     AttributeDefinitions: [       
-//         { AttributeName: "symbol", AttributeType: "S" }
-//     ],
-//     ProvisionedThroughput: {       
-//         ReadCapacityUnits: 10, 
-//         WriteCapacityUnits: 10
-//     }
-// };
-
-// dynamodb.createTable(params, function(err, data) {
-//     if (err) {
-//         console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
-//     } else {
-//         console.log("Created table. Table description JSON:", JSON.stringify(data, null, 2));
-//     }
-// });
