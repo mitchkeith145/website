@@ -6,8 +6,8 @@
 >2. `npm run-script build-web`
 >3. `npm run-script run-local`
 
--- **NOTE**: BackEnd functionality that retrieves data from DynamoDB **will not work** without access to my personal AWS key, secret key, and password, which are not included in this repo.
--- **NPM Version 5.5.1 & Node Version 8.9.3 used**
+- **NOTE**: BackEnd functionality that retrieves data from DynamoDB **will not work** without access to my personal AWS key, secret key, and password, which are not included in this repo.
+- **NPM Version 5.5.1 & Node Version 8.9.3 used**
 
 ### Summary
 This website is built with NodeJS + React, and sits atop AWS infrastructure.
